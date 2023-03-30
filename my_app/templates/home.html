@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block container %}
+    {% for product in products.values() %}
+        <p>{{ product['description'] }}</p>
+        <p>{{ product['valor'] }}</p>
+    {% endfor %}
+{% endblock %}
