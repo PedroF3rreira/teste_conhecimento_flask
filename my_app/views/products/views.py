@@ -5,6 +5,13 @@ from my_app.views.products.models import PRODUCTS
 product_blueprint = Blueprint('product', __name__)
 
 
+@product_blueprint.context_processor
+def my_processor():
+    def nome_completo(product):
+        return f"{product['description']} / {product['category']}"
+    return {'nome_completo': nome_completo}
+
+
 @product_blueprint.route('/')
 @product_blueprint.route('/home')
 def home():

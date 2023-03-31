@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% block container %}
+  <h1 class="display-5">{{ nome_completo(produto) }}</h1>
   <div class="card">
     <div class="card-body">
       <h3>{{ produto['description'] }}</h3>
