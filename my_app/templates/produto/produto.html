@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block container %}
+  <div class="card">
+    <div class="card-body">
+      <h3>{{ produto['description'] }}</h3>
+      <p>{{ produto['category'] }}</p>
+      <p>{{ produto['valor'] }}</p>
+      <p>{{ produto['details'] }}</p>
+    </div>
+  </div>
+{% endblock %}

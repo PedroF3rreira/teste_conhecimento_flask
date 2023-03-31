@@ -1,7 +1,22 @@
 {% extends 'base.html' %}
 {% block container %}
-    {% for product in products.values() %}
-        <p>{{ product['description'] }}</p>
-        <p>{{ product['valor'] }}</p>
-    {% endfor %}
+<table class="table table-sm table-hover border">
+    <thead>
+        <tr>
+            <th>Descricao</th>
+            <th>Preço</th>
+            <th>Categoria</th>
+        </tr>
+    </thead>
+    <tbody class="">
+        {% for key, product in products.items() %}
+        <tr>
+            <td>{{ product['description'] }}</td>
+            <td>{{ product['valor'] }}</td>
+            <td>{{ product['category'] }}</td>
+            <td><a href="{{ url_for('product.produto', key=key) }}">ver</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}
